@@ -2,7 +2,7 @@ import React, {useState, createContext}  from 'react'
 
 export const MovieContext = createContext();
 
-export const MovieProvider = (props)=>{
+export const MovieProvider = props =>{
     const [movies, setMovies] = useState([
         {
             name: 'Harry Potter',
@@ -21,9 +21,9 @@ export const MovieProvider = (props)=>{
         }
     ]);
     return (
-        <MovieContext.Provider value={"Hello adil"}>
+        <MovieContext.Provider value="this is from moviecontext" >
             {props.children}
         </MovieContext.Provider>
 
-    )
+    );
 }
