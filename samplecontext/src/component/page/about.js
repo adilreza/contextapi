@@ -1,11 +1,19 @@
-import React, { Component } from 'react'
+import React, { useContext } from 'react'
+import {MovieContext}  from '../../contextfile/moviecontext'
 
-export default class about extends Component {
-    render() {
+const About = ()=> {
+    const [moviess, setMoviess] = useContext(MovieContext)
         return (
             <div>
-                About
+                {
+                    moviess.map(movie=>(
+                    <h4>{movie.name}</h4>
+                    ))
+                }
+                <hr></hr>
+                all above from about 
             </div>
         )
-    }
 }
+
+export default About

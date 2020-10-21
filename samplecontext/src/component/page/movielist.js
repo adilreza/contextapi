@@ -2,11 +2,18 @@ import React, {useState, useContext} from 'react'
 import Movie from './movie'
 import {MovieContext} from '../../contextfile/moviecontext'
 const MovieList = () => {
-    const value = useContext(MovieContext)
+    const [movies, setMovies] = useContext(MovieContext)
     return (
         <div>
-            <h1>Hello</h1>
-            <h3>{value}</h3>            
+           {
+               movies.map(movie=>(
+                   <div>
+                       <h3>{movie.name}</h3>
+                        <h5>{movie.price}</h5>
+                   </div>
+               
+               ))
+           }           
         </div>
     )
 }
